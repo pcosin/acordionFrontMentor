@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --color-verydarkgray: hsl(237, 12%, 33%);
+  --color-darkgrayy: hsl(240, 6%, 50%);
+  --color-lightgray: hsl(240, 5%, 91%);
+  --color-orange: orange;
+  --color-violet: hsl(273, 75%, 66%);
+  --color-softblue: hsl(240, 73%, 65%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, var(--color-violet), var(--color-softblue));
+  font-size: 12px;
+  font-family: Kumbh Sans;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: min(90%, 80rem);
+  padding-block: 7rem;
+}
+
+.container {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.respuesta {
+  transition: all 0.5s ease;
+}
+
+.pregunta {
+  display: flex;
+  transition: 0.6s;
+  cursor: pointer;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+}
+
+.pregunta:hover {
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.pregunta::after {
+  content: url(../images/icon-arrow-down.svg);
+  font-size: 10px;
+  transition: 0.6s;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.pregunta.open::after {
+  transform: rotate(180deg);
+}
+
+.respuesta {
+  overflow: hidden;
+  max-height: 0;
+  /* transition: max-height 0.2s ease-out; */
+  transition: max-height 250ms ease, margin-top 250ms; */
+  color: var(--color-verydarkgray);
+}
+
+.respuesta p {
+  max-width: 35ch;
+}
+
+.imagen {
+  display: grid;
+  place-items: center;
+  margin-top: -52%;
+  filter: drop-shadow(0px 25px 0px #e7e7e9);
+}
+
+.img-woman-desktop {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.acordeon {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dotted black;
+}
+
+/* ------------------- */
+/* Responsive    */
+/* ------------------- */
+
+@media (min-width: 60rem) {
+  .main {
+  }
+  .container {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  .container > * {
+    max-width: 100%;
+  }
+
+  h1 {
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .img-woman-mobile {
+    display: none;
+  }
+
+  .img-woman-desktop {
+    display: block;
+    max-width: 350px;
+  }
+
+  .imagen {
+    display: grid;
+    place-items: center;
+    margin-top: 0;
+    transform: translateX(-20%);
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
