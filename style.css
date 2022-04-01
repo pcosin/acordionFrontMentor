@@ -35,6 +35,7 @@ a {
 }
 
 .container {
+  max-width: 25rem;
   padding: 2rem;
   background-color: white;
   border-radius: 20px;
@@ -74,12 +75,12 @@ a {
   overflow: hidden;
   max-height: 0;
   /* transition: max-height 0.2s ease-out; */
-  transition: max-height 250ms ease, margin-top 250ms; */
-  color: var(--color-verydarkgray);
+  transition: max-height 250ms ease, margin-top 250ms;
 }
 
 .respuesta p {
-  max-width: 35ch;
+  /* max-width: 35ch; */
+  color: var(--color-darkgrayy);
 }
 
 .imagen {
@@ -91,6 +92,12 @@ a {
 
 .img-woman-desktop {
   display: none;
+  position: relative;
+}
+
+.orange-box {
+  display: none;
+  position: absolute;
 }
 
 h1 {
@@ -112,13 +119,12 @@ h1 {
 /* Responsive    */
 /* ------------------- */
 
-@media (min-width: 60rem) {
-  .main {
-  }
+@media (min-width: 58rem) {
   .container {
     display: flex;
     gap: 1rem;
     overflow: hidden;
+    max-width: 80%;
   }
 
   .container > * {
@@ -137,6 +143,15 @@ h1 {
   .img-woman-desktop {
     display: block;
     max-width: 350px;
+  }
+
+  .orange-box {
+    width: 9rem;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 185px;
+    z-index: 1;
   }
 
   .imagen {
